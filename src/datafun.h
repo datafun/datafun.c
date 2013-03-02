@@ -17,7 +17,7 @@
 #define VERSION "0.0.0"
 
 
-/***************
+/****************
  * CLI PARAMS
  ****************/
 
@@ -94,7 +94,9 @@ char* strtrim(char *str) {
 }
 
 
-//DF
+/****************
+ * DATA FUN
+ ****************/
 
 
 void df_cleanup() {
@@ -134,6 +136,49 @@ void df_cmd_reduce(command_t* cmd) {
 
 }
 
+/****************
+ * INTERFACE
+ ****************/
+
+void each_line(char* line);
+
+void init_commands(command_t* cmd);
+
+void result();
+
+int main(int argc, char **argv) {
+  command_t program;
+  char* name = malloc(255);
+  
+  df_cmd_setup(&program, df_filename(FILE_NAME, name), argc, argv);
+
+  init_commands(&program);
+
+  command_parse(&program, argc, argv);
+
+  df_cmd_init_defaults();
+
+  char* line = malloc(255);
+  size_t n = 0;
+  ssize_t m = 0;
+
+  do {
+    m = getline(&line, &n, df_carg_input);
+    strtrim(line);
+    if (strlen(line) > 0) {
+      each_line(line);
+    }
+  } while (m > 0);
+
+  result();
+
+  free(name);
+  free(line);
+  
+  df_cleanup();
+
+  command_free(&program);
+}
 
 
 
