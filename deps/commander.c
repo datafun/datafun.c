@@ -227,10 +227,11 @@ command_parse_args(command_t *self, int argc, char **argv) {
     }
 
     // unrecognized
+    /* THIS MESSES UP ON NEGATIVE NUMBERS
     if ('-' == arg[0] && !literal) {
       fprintf(stderr, "unrecognized flag %s\n", arg);
       exit(1);
-    }
+    }*/
 
     int n = self->argc++;
     if (n == COMMANDER_MAX_ARGS) error("Maximum number of arguments exceeded");
