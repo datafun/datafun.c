@@ -2,10 +2,6 @@
 
 source ./test/testlib.sh
 
-filename=$(basename "$fullfile")
-extension="${filename##*.}"
-filename="${filename%.*}"
-
 test_file_start 
 
 

@@ -12,8 +12,15 @@ printf "\nTesting datafun...\n"
 mkdir -p /tmp/test-datafun
 
 
-#actual tests
+##########
+# TESTS
+##########
+
+#reduce
 test/reduce/lt.test.sh
+
+#aggregate
+test/aggregate/mean.test.sh
 
 
 #any cleanup
