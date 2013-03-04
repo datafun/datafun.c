@@ -22,11 +22,15 @@ mean:
 #mode:
 #	$(CC) $(SRC) src/aggregate/mode.c $(CARGS) $(INCLUDE) -o ./bin/$@
 
-#install: all
-#	install ./bin/* $(PREFIX)/bin/*
+install:
+	install ./bin/lt $(PREFIX)/bin/lt
+	install ./bin/max $(PREFIX)/bin/max
+	install ./bin/mean $(PREFIX)/bin/mean
 
-#uninstall:
-#	rm $(PREFIX)/bin/$(BIN)
+uninstall:
+	rm $(PREFIX)/bin/lt
+	rm $(PREFIX)/bin/max
+	rm $(PREFIX)/bin/mean
 
 clean:
 	rm -f ./bin/*
