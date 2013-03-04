@@ -9,6 +9,7 @@ printf "\nTesting datafun...\n"
 
 
 #initailization
+rm -rf /tmp/test-datafun
 mkdir -p /tmp/test-datafun
 
 
@@ -21,6 +22,9 @@ test/reduce/lt.test.sh
 
 #aggregate
 test/aggregate/mean.test.sh
+
+#search
+test/search/max.test.sh
 
 
 #any cleanup
