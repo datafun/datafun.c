@@ -31,6 +31,10 @@ function test_start() {
 	printf "    $BIN $ARGS ... "
 	
 	$(pwd)/bin/$BIN -i $(pwd)/test/resources/$INPUT -o $OUT_FILE $ARGS
+	status=$?
+	if [ $status -ne 0 ]; then
+		echo "FAILED" > $OUT_FILE
+	fi
 
 	RET=$OUT_FILE
 }
