@@ -1,7 +1,7 @@
 #include "commander.h"
 #include "datafun.h"
 
-void init_commands(command_t* cmd) {
+void start(command_t* cmd) {
   df_cmd_io(cmd);
   df_cmd_n(cmd);
 }
@@ -13,7 +13,7 @@ void each_line(char* line) {
   }
 }
 
-void result() {
-  
+void finish() {
+
 }
 

@@ -4,7 +4,7 @@
 static double _sum = 0.0;
 static double _count = 0.0;
 
-void init_commands(command_t* cmd) {
+void start(command_t* cmd) {
   df_cmd_io(cmd);
 }
 
@@ -14,7 +14,7 @@ void each_line(char* line) {
   _count += 1;
 }
 
-void result() {
+void finish() {
   fprintf(df_carg_output, "%f\n", (_sum / _count));  
 }
 

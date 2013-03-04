@@ -142,9 +142,9 @@ void df_cmd_reduce(command_t* cmd) {
 
 void each_line(char* line);
 
-void init_commands(command_t* cmd);
+void start(command_t* cmd);
 
-void result();
+void finish();
 
 int main(int argc, char **argv) {
   command_t program;
@@ -152,7 +152,7 @@ int main(int argc, char **argv) {
   
   df_cmd_setup(&program, df_filename(FILE_NAME, name), argc, argv);
 
-  init_commands(&program);
+  start(&program);
 
   command_parse(&program, argc, argv);
 
@@ -170,7 +170,7 @@ int main(int argc, char **argv) {
     }
   } while (m > 0);
 
-  result();
+  finish();
 
   free(name);
   free(line);
