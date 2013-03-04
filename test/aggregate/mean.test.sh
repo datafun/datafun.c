@@ -6,17 +6,13 @@ test_file_start
 
 
 
-test_start "mean"
+test_start "mean" "" "data.txt"
 
-OUT_FILE=/tmp/test-datafun/mean.test.out
-
-$(pwd)/bin/mean -i $(pwd)/test/resources/data.txt -o $OUT_FILE
-
-OUTPUT=$(diff $OUT_FILE -<<EOF
-64.050780
+OUTPUT=$(diff $RET -<<EOF
+61.934027
 EOF)
 
-test_empty $OUTPUT
+assert_empty $OUTPUT
 
 
 
