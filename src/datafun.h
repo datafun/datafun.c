@@ -4,17 +4,17 @@
 #include <strings.h>
 #include <errno.h>
 
+#include "../version.h"
 
 /***************
  * MACROS
  ****************/
 
-
 #define ERR_EXIT(code, ...) fprintf(stderr, __VA_ARGS__); exit(code)
 
 #define FILE_NAME (strrchr(__FILE__, '/') ? strrchr(__FILE__, '/') + 1 : __FILE__)
 
-#define VERSION "0.0.0"
+
 
 
 /****************
@@ -110,11 +110,9 @@ char* df_filename(char* name, char* buf){
   return buf;
 }
 
-void df_cmd_setup(command_t* cmd, char* name, int argc, char **argv) {
+void df_cmd_setup(command_t* cmd, char* name) {
   command_init(cmd, name, VERSION);
-  cmd->usage = "[options] <command>";
-  ARGC = argc;
-  ARGV = argv;
+  //cmd->usage = "[options] <command>";
 }
 
 void df_cmd_io(command_t* cmd) {
@@ -146,11 +144,14 @@ void start(command_t* cmd);
 
 void finish();
 
+
+static char* __name = NULL;
 int main(int argc, char **argv) {
   command_t program;
-  char* name = malloc(255);
-  
-  df_cmd_setup(&program, df_filename(FILE_NAME, name), argc, argv);
+  __name = malloc(255);
+
+  ARGC = argc;
+  ARGV = argv;
 
   start(&program);
 
@@ -172,7 +173,7 @@ int main(int argc, char **argv) {
 
   finish();
 
-  free(name);
+  free(__name);
   free(line);
   
   df_cleanup();
