@@ -13,16 +13,16 @@ all: aggregate max mean
 aggregate: gt lt
 
 gt: 
-	$(CC) $(SRC) src/reduce/gt.c $(CARGS) $(INCLUDE) -o ./bin/$@
+	$(CC) $(SRC) src/reduce/$@.c $(CARGS) $(INCLUDE) -o ./bin/$@
 
 lt:
-	$(CC) $(SRC) src/reduce/lt.c $(CARGS) $(INCLUDE) -o ./bin/$@
+	$(CC) $(SRC) src/reduce/$@.c $(CARGS) $(INCLUDE) -o ./bin/$@
 
 max:
-	$(CC) $(SRC) src/search/max.c $(CARGS) $(INCLUDE) -o ./bin/$@
+	$(CC) $(SRC) src/search/$@.c $(CARGS) $(INCLUDE) -o ./bin/$@
 
 mean:
-	$(CC) $(SRC) src/aggregate/mean.c $(CARGS) $(INCLUDE) -o ./bin/$@
+	$(CC) $(SRC) src/aggregate/$@.c $(CARGS) $(INCLUDE) -o ./bin/$@
 
 #mode:
 #	$(CC) $(SRC) src/aggregate/mode.c $(CARGS) $(INCLUDE) -o ./bin/$@
