@@ -8,7 +8,7 @@ These commands compute a number or numbers from the entire input.
 max
 ---
 
-Computers the maximum number from the input. Can also output the index that the number is found out.
+Computes the maximum number from the input. Can also output the index of the maximum.
 
 
 ### usage
@@ -41,7 +41,7 @@ Computers the maximum number from the input. Can also output the index that the 
     6
 
 
-#### 1
+#### 1. find maximum
 
 **cmd:**
 
@@ -53,7 +53,7 @@ Computers the maximum number from the input. Can also output the index that the 
     10442
 
 
-#### 2
+#### 2. also get the index, or the line that it resides at
 
 **cmd:**
 
@@ -65,7 +65,7 @@ Computers the maximum number from the input. Can also output the index that the 
     3,10442.000000
 
 
-#### 3
+#### 3. get the index, but convert it to mean something that is applicable to your data set
 
 **cmd:**
 
