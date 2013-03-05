@@ -19,8 +19,8 @@ max:
 mean:
 	$(CC) $(SRC) src/aggregate/mean.c $(CARGS) $(INCLUDE) -o ./bin/$@
 
-#mode:
-#	$(CC) $(SRC) src/aggregate/mode.c $(CARGS) $(INCLUDE) -o ./bin/$@
+mode:
+	$(CC) $(SRC) src/aggregate/mode.c $(CARGS) $(INCLUDE) -o ./bin/$@
 
 install:
 	install ./bin/lt $(PREFIX)/bin/lt
