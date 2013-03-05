@@ -65,7 +65,7 @@ Computes the maximum number from the input. Can also output the index of the max
     3,10442.000000
 
 
-#### 3. get the index, but convert it to mean something that is applicable to your data set
+#### 3. get the index, but convert it to something significant that is applicable to your data set
 
 **cmd:**
 
