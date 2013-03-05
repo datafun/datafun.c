@@ -29,4 +29,4 @@ These commands search for a particular element determined by the program and inp
 
 
 
-max: https://github.com/jprichardson/datafun/blob/master/docs/search/max.md
+[max]: https://github.com/jprichardson/datafun/blob/master/docs/search/max.md
