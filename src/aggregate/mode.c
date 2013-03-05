@@ -1,13 +1,35 @@
+/**
+  Want this to obey rules of mode:
+
+  Must haves:
+  1. If there is not more than one occurance of an element, there is no mode.
+  2. If there is more than one occurance and it is the highest number of frequency, then it is the mode.
+  3. If more than one element satisfies (2), then they are all the mode. Ice cream anyone? hehehehe
+
+  Nice to have:
+  1. Input does not need to be sorted.
+  2. Allow strings as well as numbers.
+
+*/
+
+#include <math.h>
+#include <stdbool.h>
+#include <stdint.h>
 #include "commander.h"
 #include "datafun.h"
-#include "hash.h"
 
-static hash_t* hash = NULL;
 
-int dhash_has(hash_t *self, char *key) {
-  khiter_t k = kh_get(ptr, self, key);
-  printf("%d\n", k);
-  return kh_exist(self, k);
+static double _prevNum = 0.0;
+
+static double _currentNum = 0.0;
+static uint64_t _currentCount = 0;
+
+static uint64_t _modeCount = 0;
+static double _mode = 0.0;
+
+static bool carg_s = false;
+static void on_arg_s(command_t *self) {
+  carg_s = true;
 }
 
 void start(command_t* cmd) {
@@ -15,42 +37,25 @@ void start(command_t* cmd) {
   
   df_cmd_io(cmd);
 
-  hash = hash_new();
+  command_option(cmd, "-s", "--sorted", "the input is sorted, required at the moment", on_arg_s);  
 }
 
 void each_line(char* line) {
+  if (!carg_s) { ERR_EXIT(100, "You did not pass the -s or --sorted flag. Input is required to be sorted at the moment."); }
+
   double num = atof(line);
-  char* buf = malloc(strlen(line));
-  sprintf(buf, "%f", num);
+  if (_prevNum == num) {
+    _currentCount += 1;
+    if (_currentCount > _)
+  }  
 
-  int* val = NULL;
-  printf("EACH: %s\n", buf);
-  int d = dhash_has(hash, buf);
-  printf("HAS: %d\n", d);
-  if (hash_has(hash, buf)) {
-    puts("has");
-    val = (int*)hash_get(hash, buf);
-    *val += 1;
-  } else {
-    puts("doe nost");
-    val = malloc(4);
-    *val = 5;
-  }
 
-  printf("%d\n", *val);
-  hash_set(hash, buf, val);
+
+  _prevNum = num;
 }
 
 void finish() {
-  /*for (khiter_t k = kh_begin(hash); k < kh_end(hash); ++k) {
-    if (!kh_exist(hash, k)) continue;
-    const char* key = kh_key(hash, k); 
-    int* val = (int*)kh_value(hash, k);
-    
-    printf("%s: %d\n", key, *val);
-  }*/
-
-  hash_free(hash);
+ 
 }
 
 

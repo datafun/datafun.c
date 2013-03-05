@@ -22,6 +22,7 @@ test/reduce/lt.test.sh
 
 #aggregate
 test/aggregate/mean.test.sh
+#test/aggregate/mode.test.sh
 
 #search
 test/search/max.test.sh
