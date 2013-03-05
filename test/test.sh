@@ -29,6 +29,7 @@ test/aggregate/mean.test.sh
 
 #search
 test/search/max.test.sh
+test/search/min.test.sh
 
 
 #any cleanup
