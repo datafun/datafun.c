@@ -8,7 +8,7 @@ INCLUDE = -I deps -I src
 BIN=datafun
 
 
-all: reduce max mean
+all: aggregate reduce search
 
 ### reduce
 
@@ -27,10 +27,9 @@ lte:
 	$(CC) $(SRC) src/reduce/$@.c $(CARGS) $(INCLUDE) -o ./bin/$@
 
 
-### 
+### aggregate
 
-max:
-	$(CC) $(SRC) src/search/$@.c $(CARGS) $(INCLUDE) -o ./bin/$@
+aggregate: mean
 
 mean:
 	$(CC) $(SRC) src/aggregate/$@.c $(CARGS) $(INCLUDE) -o ./bin/$@
@@ -38,15 +37,24 @@ mean:
 #mode:
 #	$(CC) $(SRC) src/aggregate/mode.c $(CARGS) $(INCLUDE) -o ./bin/$@
 
+### search
+
+search: max min
+
+max:
+	$(CC) $(SRC) src/search/$@.c $(CARGS) $(INCLUDE) -o ./bin/$@
+
+min:
+	$(CC) $(SRC) src/search/$@.c $(CARGS) $(INCLUDE) -o ./bin/$@
+
+
+### UTILS
+
 install:
-	install ./bin/lt $(PREFIX)/bin/lt
-	install ./bin/max $(PREFIX)/bin/max
-	install ./bin/mean $(PREFIX)/bin/mean
+	ls -tr bin/* | xargs -t -I {} install {} $(PREFIX)/bin/.
 
 uninstall:
-	rm $(PREFIX)/bin/lt
-	rm $(PREFIX)/bin/max
-	rm $(PREFIX)/bin/mean
+	ls bin | xargs -t -I {} rm $(PREFIX)/bin/{}
 
 clean:
 	rm -f ./bin/*
@@ -55,3 +63,4 @@ test:
 	./test/test.sh
 
 .PHONY: clean install uninstall test
+
