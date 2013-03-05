@@ -27,7 +27,7 @@ At this time, has only been tested on Mac OS X 10.8. I'd expect it to work on Li
 Command Docs
 ------------
 
-See docs/
+See [docs/index.md](https://github.com/jprichardson/datafun/blob/master/docs/index.md)
 
 
 
