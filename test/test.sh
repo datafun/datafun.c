@@ -19,6 +19,7 @@ mkdir -p /tmp/test-datafun
 
 #reduce
 test/reduce/lt.test.sh
+test/reduce/gt.test.sh
 
 #aggregate
 test/aggregate/mean.test.sh
