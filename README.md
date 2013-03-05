@@ -28,3 +28,18 @@ Command Docs
 ------------
 
 See docs/
+
+
+
+Contributions
+-------------
+
+[JP Richardson](http://about.me/jprichardson)
+
+(your name here)
+
+
+
+License
+-------
+

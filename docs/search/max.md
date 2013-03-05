@@ -1,9 +1,4 @@
 
-aggregate
-=========
-
-These commands compute a number or numbers from the entire input.
-
 
 max
 ---
