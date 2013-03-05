@@ -8,15 +8,26 @@ INCLUDE = -I deps -I src
 BIN=datafun
 
 
-all: aggregate max mean
+all: reduce max mean
 
-aggregate: gt lt
+### reduce
+
+reduce: gt gte lt lte
 
 gt: 
 	$(CC) $(SRC) src/reduce/$@.c $(CARGS) $(INCLUDE) -o ./bin/$@
 
+gte: 
+	$(CC) $(SRC) src/reduce/$@.c $(CARGS) $(INCLUDE) -o ./bin/$@
+
 lt:
 	$(CC) $(SRC) src/reduce/$@.c $(CARGS) $(INCLUDE) -o ./bin/$@
+
+lte:
+	$(CC) $(SRC) src/reduce/$@.c $(CARGS) $(INCLUDE) -o ./bin/$@
+
+
+### 
 
 max:
 	$(CC) $(SRC) src/search/$@.c $(CARGS) $(INCLUDE) -o ./bin/$@
