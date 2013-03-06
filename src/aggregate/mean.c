@@ -17,7 +17,7 @@ void each_line(char* line) {
 }
 
 void finish() {
-  fprintf(df_carg_output, "%f\n", (_sum / _count));  
+  fprintf(df_carg_output, "%.15g\n", (_sum / _count));  
 }
 
 

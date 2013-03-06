@@ -9,7 +9,7 @@ test_file_start
 test_start "mean" "" "data.txt"
 
 OUTPUT=$(diff $RET -<<EOF
-61.934027
+61.9340266666667
 EOF)
 
 assert_empty $OUTPUT
