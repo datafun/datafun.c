@@ -7,11 +7,11 @@ function assert_empty() {
 	if [ -z "$1" ]
 	then
 		printf "${COLOR_GREEN}passed${COLOR_NORMAL}\n"
-		PASS=$((PASS+1))
+		#PASS=$((PASS+1))
 	else
 		printf "${COLOR_RED}failed${COLOR_NORMAL}\n"
 		printf "$1\n"
-		FAIL=`expr $FAIL + 1`
+		#FAIL=`expr $FAIL + 1`
 	fi
 }
 
@@ -46,6 +46,6 @@ function test_bin() {
 
 
 function test_all_done() {
-	printf "\nFinished. $PASS passed, $FAIL failed\n"
+	printf "\nFinished.\n"  #$PASS passed, $FAIL failed\n"
 }
 

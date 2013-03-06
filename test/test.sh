@@ -23,7 +23,7 @@ test/aggregate/mean.test.sh
 test/aggregate/sum.test.sh
 
 #map
-source ./test/map/abs.test.sh
+test/map/abs.test.sh
 
 
 #reduce
