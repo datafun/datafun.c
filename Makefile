@@ -29,13 +29,17 @@ lte:
 
 ### aggregate
 
-aggregate: mean
+aggregate: mean sum
 
 mean:
 	$(CC) $(SRC) src/aggregate/$@.c $(CARGS) $(INCLUDE) -o ./bin/$@
 
 #mode:
 #	$(CC) $(SRC) src/aggregate/mode.c $(CARGS) $(INCLUDE) -o ./bin/$@
+
+sum:
+	$(CC) $(SRC) src/aggregate/$@.c $(CARGS) $(INCLUDE) -o ./bin/$@
+
 
 ### search
 
