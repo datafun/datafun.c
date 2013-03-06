@@ -140,7 +140,7 @@ void df_cmd_reduce(command_t* cmd) {
 
 void each_line(char* line);
 
-void start(command_t* cmd);
+void start(int argc, char** argv, command_t* cmd);
 
 void finish();
 
@@ -153,7 +153,7 @@ int main(int argc, char **argv) {
   ARGC = argc;
   ARGV = argv;
 
-  start(&program);
+  start(argc, argv, &program);
 
   command_parse(&program, argc, argv);
 

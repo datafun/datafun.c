@@ -3,7 +3,7 @@
 
 static double _sum = 0.0;
 
-void start(command_t* cmd) {
+void start(int argc, char** argv, command_t* cmd) {
   df_cmd_setup(cmd, df_filename(FILE_NAME, __name));
   
   df_cmd_io(cmd);
