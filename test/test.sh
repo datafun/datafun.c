@@ -27,10 +27,11 @@ test/map/abs.test.sh
 
 
 #reduce
-test/reduce/lt.test.sh
 test/reduce/gt.test.sh
-test/reduce/lte.test.sh
 test/reduce/gte.test.sh
+test/reduce/lt.test.sh
+test/reduce/lte.test.sh
+test/reduce/splitline.test.sh
 
 
 
