@@ -35,7 +35,7 @@ abs:
 
 ### reduce
 
-reduce: gt gte lt lte splitline
+reduce: gt gte lt lte splitlines
 
 gt: 
 	$(CC) $(SRC) src/reduce/$@.c $(CARGS) $(INCLUDE) -o ./bin/$@
@@ -49,7 +49,7 @@ lt:
 lte:
 	$(CC) $(SRC) src/reduce/$@.c $(CARGS) $(INCLUDE) -o ./bin/$@
 
-splitline:
+splitlines:
 	$(CC) $(SRC) src/reduce/$@.c $(CARGS) $(INCLUDE) -o ./bin/$@
 
 
