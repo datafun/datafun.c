@@ -17,16 +17,22 @@ mkdir -p /tmp/test-datafun
 # TESTS
 ##########
 
+#aggregate
+test/aggregate/mean.test.sh
+#test/aggregate/mode.test.sh
+test/aggregate/sum.test.sh
+
+#map
+source ./test/map/abs.test.sh
+
+
 #reduce
 test/reduce/lt.test.sh
 test/reduce/gt.test.sh
 test/reduce/lte.test.sh
 test/reduce/gte.test.sh
 
-#aggregate
-test/aggregate/mean.test.sh
-#test/aggregate/mode.test.sh
-test/aggregate/sum.test.sh
+
 
 #search
 test/search/max.test.sh

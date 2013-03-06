@@ -8,7 +8,30 @@ INCLUDE = -I deps -I src
 BIN=datafun
 
 
-all: aggregate reduce search
+all: aggregate map reduce search
+
+
+### aggregate
+
+aggregate: mean sum
+
+mean:
+	$(CC) $(SRC) src/aggregate/$@.c $(CARGS) $(INCLUDE) -o ./bin/$@
+
+#mode:
+#	$(CC) $(SRC) src/aggregate/mode.c $(CARGS) $(INCLUDE) -o ./bin/$@
+
+sum:
+	$(CC) $(SRC) src/aggregate/$@.c $(CARGS) $(INCLUDE) -o ./bin/$@
+
+
+### map
+
+map: abs
+
+abs:
+	$(CC) $(SRC) src/map/$@.c $(CARGS) $(INCLUDE) -o ./bin/$@
+
 
 ### reduce
 
@@ -27,18 +50,7 @@ lte:
 	$(CC) $(SRC) src/reduce/$@.c $(CARGS) $(INCLUDE) -o ./bin/$@
 
 
-### aggregate
 
-aggregate: mean sum
-
-mean:
-	$(CC) $(SRC) src/aggregate/$@.c $(CARGS) $(INCLUDE) -o ./bin/$@
-
-#mode:
-#	$(CC) $(SRC) src/aggregate/mode.c $(CARGS) $(INCLUDE) -o ./bin/$@
-
-sum:
-	$(CC) $(SRC) src/aggregate/$@.c $(CARGS) $(INCLUDE) -o ./bin/$@
 
 
 ### search
