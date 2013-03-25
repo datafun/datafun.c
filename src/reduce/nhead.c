@@ -1,0 +1,1 @@
+//opposite of head, if head -n 5 takes the first 5 lines, then nhead -5 rejects the first 5 lines
